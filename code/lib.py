@@ -39,7 +39,7 @@ class DataSet:
     # each line in the file corresponds to a sample
     for line in matrix_file:
       # parse the expression data for each gene in the sample
-      gene_profile = map(float, line.strip().split('\t'))
+      gene_profile = list(map(float, line.strip().split('\t')))
       # store the sample data
       samples.append(Sample(labels[matrix_line_index], gene_profile))
       matrix_line_index += 1
